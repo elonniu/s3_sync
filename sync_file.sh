@@ -20,8 +20,8 @@ fi
 # Get metadata of the S3 object
 s3_metadata=$(aws s3api head-object --bucket "$s3_bucket" --key "$s3_object_key")
 
-# Extract the ETag (MD5 hash) from the S3 metadata
-s3_etag=$(echo "$s3_metadata" | jq -r '.ETag')
+# Extract the ETag (MD5 hash) from the S3 metadata without " (double quotes)
+s3_etag=$(echo "$s3_metadata" | jq -r '.ETag' | tr -d '"')
 echo "S3 ETag: $s3_etag"
 
 # Get the local file's MD5 hash
