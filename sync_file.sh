@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "This is a remote sync message."
+echo "I will sync file from s3 to local..."
