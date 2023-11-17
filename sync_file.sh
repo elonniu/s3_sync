@@ -33,10 +33,9 @@ echo "Local ETag: $local_etag"
 # Compare ETags to check if the files are the same
 if [ "$s3_etag" == "$local_etag" ]; then
     echo "S3 file and local file are the same. No need to download."
-    return
+else
+    aws s3 cp "s3://$s3_bucket/$s3_object_key" "$local_file"
+    echo "S3 file has been updated and downloaded to $local_file."
 fi
-
-aws s3 cp "s3://$s3_bucket/$s3_object_key" "$local_file"
-echo "S3 file has been updated and downloaded to $local_file."
 
 sleep $sleep_seconds
