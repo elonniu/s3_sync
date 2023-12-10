@@ -14,7 +14,8 @@ local_file="/opt/ml/code/sd-dynamic-prompts/wildcards/colors.txt"
 if [ ! -f "$local_file" ]; then
     # Download the S3 file and save it to the local file
     aws s3 cp "$s3_file" "$local_file"
-    echo "--- $s3_file has been downloaded to $local_file."
+    echo "--- $s3_file has been downloaded to $local_file"
+    cat $local_file
     return 0
 fi
 
@@ -34,7 +35,8 @@ else
     echo "$s3_file ETag: $s3_etag"
     echo "$local_file ETag: $local_etag"
     aws s3 cp "$s3_file" "$local_file"
-    echo "--- $s3_file has been updated and downloaded to $local_file."
+    echo "--- $s3_file has been updated and downloaded to $local_file"
+    cat $local_file
 fi
 
 sleep $sleep_seconds
