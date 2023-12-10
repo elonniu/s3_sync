@@ -4,11 +4,11 @@ sleep_seconds=5
 
 # Define S3 bucket and object key
 s3_bucket="elonniu"
-s3_object_key="files/colors.txt"
+s3_object_key="files/seasons.txt"
 
 s3_file="s3://$s3_bucket/$s3_object_key"
 # Define local file path
-local_file="/opt/ml/code/sd-dynamic-prompts/wildcards/colors.txt"
+local_file="/opt/ml/code/sd-dynamic-prompts/wildcards/seasons.txt"
 
 # check local file exists
 if [ ! -f "$local_file" ]; then
