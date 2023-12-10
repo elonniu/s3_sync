@@ -36,7 +36,8 @@ else
     echo "$local_file ETag: $local_etag"
     aws s3 cp "$s3_file" "$local_file"
     echo "--- $s3_file has been updated and downloaded to $local_file"
-    cat $local_file
 fi
+
+cat $local_file
 
 sleep $sleep_seconds
