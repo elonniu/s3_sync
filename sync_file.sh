@@ -6,10 +6,10 @@ echo "-------------- sync_file.sh --------------"
 
 # Define S3 bucket and object key
 s3_bucket="elonniu"
-s3_object_key="files/sd-dynamic-prompts.csv"
+s3_object_key="files/colors.txt"
 
 # Define local file path
-local_file="/tmp/sd-dynamic-prompts.csv"
+local_file="/opt/ml/code/sd-dynamic-prompts/wildcards/colors.txt"
 
 # check local file exists
 if [ ! -f "$local_file" ]; then
