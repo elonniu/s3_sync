@@ -8,7 +8,7 @@ s3_object_key="files/colors.txt"
 
 s3_file="s3://$s3_bucket/$s3_object_key"
 # Define local file path
-local_file="/opt/ml/code/sd-dynamic-prompts/wildcards/colors.txt"
+local_file="/opt/ml/code/extensions/sd-dynamic-prompts/wildcards/colors.txt"
 
 # check local file exists
 if [ ! -f "$local_file" ]; then
